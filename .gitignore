@@ -1,0 +1,4 @@
+.DS_Store
+.AppleDouble
+npm-debug.log*
+node_modules
