@@ -1,6 +1,6 @@
 {
   "name": "webdriverjs-example",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Example tests using webdriverjs",
   "scripts": {
     "test": "./node_modules/.bin/mocha ./test/*Spec.js",
