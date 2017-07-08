@@ -1,19 +1,24 @@
-let expect = require('chai').expect
-const {Builder, By, promise, until} = require('selenium-webdriver')
-let driver = new Builder()
-    .usingServer('http://localhost:4444/wd/hub')
-    .forBrowser('chrome')
-    .build()
+'use strict';
+
+const assert = require('assert');
+const {Builder, By, promise, until} = require('selenium-webdriver');
+const path = require('chromedriver').path;
 
 describe('QualityShepherd.com', function() {
+    let driver;
+
+    beforeEach(async function() {
+        driver = await new Builder().forBrowser('chrome').build();
+    });
+
     it('should open the home page', async function() {
-        await driver.get('http://qualityshepherd.com')
-        let siteTitle = await driver.findElement(By.css('.site-title a')).getText()
+        await driver.get('http://qualityshepherd.com');
+        let siteTitle = await driver.findElement(By.css('.site-title a')).getText();
         
-        expect(siteTitle).to.equal('Quality Shepherd')
-    })
+        assert.equal(siteTitle, 'Quality Shepherd');
+    });
 
     after(async function() {
-        await driver.quit()
-    })
-})
+        await driver.quit();
+    });
+});

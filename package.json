@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "Example tests using webdriverjs",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/*Spec.js",
-    "install": "./node_modules/.bin/selenium-standalone install",
-    "start": "./node_modules/.bin/selenium-standalone start"
+    "test": "./node_modules/.bin/mocha test/*Spec.js"
   },
   "keywords": [
     "webdriverjs",
@@ -16,12 +14,9 @@
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
-    "chai": "^3.5.0",
+    "chromedriver": "^2.30.1",
     "mocha": "^3.3.0",
-    "selenium-standalone": "^6.4.1",
     "selenium-webdriver": "^3.3.0"
   },
-  "devDependencies": {
-    "eslint": "^3.19.0"
-  }
+  "devDependencies": {}
 }
