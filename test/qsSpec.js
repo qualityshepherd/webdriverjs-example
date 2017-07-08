@@ -2,12 +2,11 @@
 
 const assert = require('assert');
 const {Builder, By, promise, until} = require('selenium-webdriver');
-const path = require('chromedriver').path;
 
 describe('QualityShepherd.com', function() {
     let driver;
 
-    beforeEach(async function() {
+    before(async function() {
         driver = await new Builder().forBrowser('chrome').build();
     });
 
