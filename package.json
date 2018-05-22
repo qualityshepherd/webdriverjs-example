@@ -1,26 +1,29 @@
 {
-  "name": "webdriverjs-example",
-  "version": "0.0.1",
-  "description": "Example tests using webdriverjs",
-  "scripts": {
-    "test": "./node_modules/.bin/mocha test/*Spec.js"
-  },
-  "engines": {
-    "node": "8.1.3"
-  },
-  "keywords": [
-    "webdriverjs",
-    "test",
-    "automation",
-    "async-await"
-  ],
-  "author": "Brine",
-  "license": "MIT",
-  "dependencies": {
-    "chromedriver": "^2.30.1",
-    "geckodriver": "^1.7.1",
-    "mocha": "^3.3.0",
-    "selenium-webdriver": "^3.3.0"
-  },
-  "devDependencies": {}
+    "name": "webdriverjs-example",
+    "version": "0.0.1",
+    "description": "Example tests using webdriverjs",
+    "scripts": {
+        "test": "./node_modules/.bin/jest tests/*test.js"
+    },
+    "jest": {
+        "verbose": true
+    },
+    "engines": {
+        "node": "8.1.3"
+    },
+    "keywords": [
+        "webdriverjs",
+        "test automation",
+        "jest",
+        "async-await"
+    ],
+    "author": "Brine",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "chromedriver": "^2.38.3",
+        "geckodriver": "^1.11.0",
+        "selenium-webdriver": "^4.0.0-alpha.1",
+        "jest": "^22.4.4"
+    }
 }
