@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Example tests using webdriverjs",
     "engines": {
-        "node": "8.5.0"
+        "node": "8.11.2"
     },
     "scripts": {
         "test": "./node_modules/.bin/jest tests/*test.js"
