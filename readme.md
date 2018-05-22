@@ -3,7 +3,7 @@
 # WebdriverJS Example
 WebdriverJS will be deprecating their promise manager in the future, and intend to make use of Node's `async` and `await` architecture (available in Node v7.6+). This project includes examples of using WebdriverJS with this new architecture.
 
-It also uses [Jest](https://facebook.github.io/jest) for a test runner, 'cause it's fun!
+It also uses ~~Jest~~ [Mocha](https://mochajs.org) for a test runner, 'cause it's fun!
 
 ## Requirements
 - Node js 7.6+

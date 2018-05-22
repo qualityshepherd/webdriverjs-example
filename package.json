@@ -1,20 +1,22 @@
 {
     "name": "webdriverjs-example",
-    "version": "0.0.1",
+    "version": "0.3.0",
     "description": "Example tests using webdriverjs",
     "engines": {
         "node": "8.11.2"
     },
     "scripts": {
-        "test": "./node_modules/.bin/jest"
+        "test": "./node_modules/.bin/mocha test/*Test.js"
     },
-    "jest": {
+    "ava": {
+        "files": "tests/**/*Test.js",
+        "concurrency": 3,
         "verbose": true
     },
     "keywords": [
         "webdriverjs",
         "test automation",
-        "jest",
+        "mocha",
         "async-await"
     ],
     "author": "Brine",
@@ -22,14 +24,11 @@
     "dependencies": {
         "chromedriver": "^2.38.3",
         "geckodriver": "^1.11.0",
-        "jest": "^22.4.4",
-        "request": "^2.87.0",
+        "mocha": "^3.5.3",
         "selenium-webdriver": "^3.6.0"
     },
     "devDependencies": {
-        "babel-core": "^6.26.3",
-        "babel-jest": "^22.4.4",
-        "babel-preset-env": "^1.7.0",
-        "regenerator-runtime": "^0.11.1"
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0"
     }
 }
