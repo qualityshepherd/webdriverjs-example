@@ -2,6 +2,9 @@
     "name": "webdriverjs-example",
     "version": "0.0.1",
     "description": "Example tests using webdriverjs",
+    "engines": {
+        "node": "8.5.0"
+    },
     "scripts": {
         "test": "./node_modules/.bin/jest tests/*test.js"
     },
