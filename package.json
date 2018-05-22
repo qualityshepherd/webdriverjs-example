@@ -6,7 +6,7 @@
         "node": "8.11.2"
     },
     "scripts": {
-        "test": "./node_modules/.bin/jest tests/*test.js"
+        "test": "./node_modules/.bin/jest"
     },
     "jest": {
         "verbose": true
@@ -19,12 +19,17 @@
     ],
     "author": "Brine",
     "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
+    "dependencies": {
         "chromedriver": "^2.38.3",
         "geckodriver": "^1.11.0",
         "jest": "^22.4.4",
         "request": "^2.87.0",
         "selenium-webdriver": "^3.6.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-jest": "^22.4.4",
+        "babel-preset-env": "^1.7.0",
+        "regenerator-runtime": "^0.11.1"
     }
 }
