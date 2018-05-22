@@ -23,7 +23,8 @@
     "devDependencies": {
         "chromedriver": "^2.38.3",
         "geckodriver": "^1.11.0",
-        "selenium-webdriver": "^3.6.0",
-        "jest": "^22.4.4"
+        "jest": "^22.4.4",
+        "request": "^2.87.0",
+        "selenium-webdriver": "^3.6.0"
     }
 }
