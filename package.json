@@ -1,34 +1,40 @@
 {
     "name": "webdriverjs-example",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "Example tests using webdriverjs",
     "engines": {
-        "node": "8.11.2"
+        "node": "12.18.3"
+    },
+    "jest": {
+        "testMatch": [
+            "**/tests/**/*.[jt]s?(x)"
+        ],
+        "testTimeout": 90000,
+        "verbose": true
     },
     "scripts": {
-        "test": "./node_modules/.bin/mocha test/*Test.js"
-    },
-    "ava": {
-        "files": "tests/**/*Test.js",
-        "concurrency": 3,
-        "verbose": true
+        "test": "./node_modules/.bin/jest --no-cache"
     },
     "keywords": [
         "webdriverjs",
         "test automation",
-        "mocha",
-        "async-await"
+        "jest",
+        "async-await",
+        "page objects",
+        "e2e tests",
+        "es6"
     ],
-    "author": "Brine",
+    "author": "brine",
     "license": "MIT",
     "dependencies": {
-        "chromedriver": "^2.38.3",
-        "geckodriver": "^1.11.0",
-        "mocha": "^3.5.3",
-        "selenium-webdriver": "^3.6.0"
+        "babel-jest": "^26.3.0",
+        "chromedriver": "^84.0.1",
+        "jest": "^26.4.2",
+        "selenium-webdriver": "^4.0.0-alpha.7"
     },
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-preset-env": "^1.7.0"
+        "@babel/core": "^7.11.4",
+        "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+        "@babel/preset-env": "^7.11.0"
     }
 }
