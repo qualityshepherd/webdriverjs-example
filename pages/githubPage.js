@@ -1,7 +1,7 @@
 import basePage from './basePage'
 
 const githubPage = {
-  ...basePage, // extend basePage
+  ...basePage,
 
   username: '.vcard-fullname'
 }

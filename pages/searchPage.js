@@ -2,7 +2,7 @@ import basePage from './basePage'
 import {Key} from 'selenium-webdriver'
 
 const searchPage = {
-  ...basePage, // extend basePage
+  ...basePage,
 
   url: '?search/',
   searchBox: '#search_input',

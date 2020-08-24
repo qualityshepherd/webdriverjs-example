@@ -2,7 +2,7 @@ import {By} from 'selenium-webdriver'
 import basePage from './basePage'
 
 const homePage = {
-  ...basePage, // extend basePage
+  ...basePage, // merge basePage
 
   // I went CSS but could also do a `By` strategy
   url: '',
