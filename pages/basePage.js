@@ -19,28 +19,28 @@ const basePage = {
     await this.driver.quit()
   },
 
-  async find(css) {
-    const element = await this.driver.wait(until.elementLocated(By.css(css)))
+  async find(elementBy) {
+    const element = await this.driver.wait(until.elementLocated(elementBy))
     return element
   },
 
-  async findAll(css) {
-    const elements = await this.driver.wait(until.elementsLocated(By.css(css)))
+  async findAll(elementBy) {
+    const elements = await this.driver.wait(until.elementsLocated(elementBy))
     return elements
   },
 
-  async click(css, index = 0) {
-    const elements = await this.findAll(css)
+  async click(elementBy, index = 0) {
+    const elements = await this.findAll(elementBy)
     return elements[index].click()
   },
 
-  async getCount(css) {
-    const elements = await this.findAll(css)
+  async getCount(elementBy) {
+    const elements = await this.findAll(elementBy)
     return elements.length
   },
 
-  async elementPressent(css) {
-    const found = await this.driver.findElements(By.css(css))
+  async elementPressent(elementBy) {
+    const found = await this.driver.findElements(elementBy)
     return found.length > 0
   },
 
@@ -59,8 +59,8 @@ const basePage = {
     await this.driver.close()
   },
 
-  async moveTo(css) {
-    const element = await this.find(css)
+  async hoverOver(elementBy) {
+    const element = await this.find(elementBy)
     const actions = this.driver.actions({async: true})
     await actions.move({origin:element}).perform();
   }

@@ -1,16 +1,14 @@
 import {By} from 'selenium-webdriver'
 import basePage from './basePage'
 
+// could use a class/inheritance here but I opted not to...
 const homePage = {
-  ...basePage, // merge basePage
+  ...basePage, // merge in basePage
 
-  // I went CSS but could also do a `By` strategy
   url: '',
-  posts: 'div.post',
-  postTitleLinks: 'h2 a',
-  siteTitle: 'h1',
-  githubLink: '#github-social img',
-  nextPageLink: '.next',
+  posts: By.css('div.post'),
+  githubLink: By.css('#github-social img'),
+  nextPageLink: By.css('.next'),
 
   async postTitleExists(postTitle) {
     const found = await this.driver.findElements(By.linkText(postTitle))

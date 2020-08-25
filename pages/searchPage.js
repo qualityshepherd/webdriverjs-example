@@ -1,13 +1,13 @@
 import basePage from './basePage'
-import {Key} from 'selenium-webdriver'
+import {Key, By} from 'selenium-webdriver'
 
 const searchPage = {
   ...basePage,
 
   url: '?search/',
-  searchBox: '#search_input',
-  results: '.search-result',
-  noResultsMsg: '#no-results',
+  searchBox: By.css('#search_input'),
+  results: By.css('.search-result'),
+  noResultsMsg: By.css('#no-results'),
 
   async searchFor(text) {
     let searchBox = await this.find(this.searchBox)

@@ -13,7 +13,7 @@ describe('QualityShepherd.com', () => {
   })
 
   test('should open social media link in new window', async () =>  {
-    await homePage.moveTo(homePage.githubLink) // because wedriver bug
+    await homePage.hoverOver(homePage.githubLink) // because wedriver bug
     await homePage.click(homePage.githubLink)
     await homePage.switchToNewWindow()
 
@@ -25,7 +25,7 @@ describe('QualityShepherd.com', () => {
 
   test('should find an older post by paging', async () =>  {
     const postTitle = 'Protractor: How To Page Object'
-    await homePage.moveTo(homePage.nextPageLink) // because wedriver bug
+    await homePage.hoverOver(homePage.nextPageLink) // because wedriver bug
     await homePage.findPostByPaging(postTitle)
 
     expect(await homePage.postTitleExists(postTitle)).toBeTruthy()

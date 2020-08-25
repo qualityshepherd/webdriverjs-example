@@ -1,8 +1,9 @@
+import {By} from 'selenium-webdriver'
 import basePage from './basePage'
 
 const githubPage = {
   ...basePage,
 
-  username: '.vcard-fullname'
+  username: By.css('.vcard-fullname')
 }
 export default githubPage
