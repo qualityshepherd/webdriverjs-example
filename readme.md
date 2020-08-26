@@ -9,6 +9,7 @@ These example E2E tests:
   - run via [Jest](https://jestjs.io/)
   - use page objects
   - run in parallel
+  - run API tests
   - use ES6+ hotness
   - are a bit silly but you'll get the point...
 

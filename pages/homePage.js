@@ -15,8 +15,13 @@ const homePage = {
     return found.length > 0
   },
 
+  /**
+   * find a post via pagination
+   * @param  {string} postTitle
+   */
   async findPostByPaging(postTitle) {
     await this.click(this.nextPageLink);
+    // did we find it? If not try, try again...
     await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
   }
 }
