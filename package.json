@@ -1,41 +1,42 @@
 {
-    "name": "webdriverjs-example",
-    "version": "1.0.0",
-    "description": "Example tests using webdriverjs",
-    "engines": {
-        "node": "12.18.3"
-    },
-    "jest": {
-        "testMatch": [
-            "**/tests/**/*.[jt]s?(x)"
-        ],
-        "testTimeout": 90000,
-        "verbose": true
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/jest --no-cache"
-    },
-    "keywords": [
-        "webdriverjs",
-        "test automation",
-        "jest",
-        "async-await",
-        "page objects",
-        "e2e tests",
-        "es6"
+  "name": "webdriverjs-example",
+  "version": "1.0.0",
+  "description": "Example tests using webdriverjs",
+  "engines": {
+    "node": "12.18.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.[jt]s?(x)"
     ],
-    "author": "brine",
-    "license": "MIT",
-    "dependencies": {
-        "babel-jest": "^26.3.0",
-        "chromedriver": "^84.0.1",
-        "jest": "^26.4.2",
-        "node-fetch": "^2.6.0",
-        "selenium-webdriver": "^4.0.0-alpha.7"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.11.4",
-        "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-        "@babel/preset-env": "^7.11.0"
-    }
+    "testTimeout": 90000,
+    "verbose": true
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jest --no-cache"
+  },
+  "keywords": [
+    "webdriverjs",
+    "test automation",
+    "jest",
+    "async-await",
+    "page objects",
+    "e2e tests",
+    "es6"
+  ],
+  "author": "brine",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "babel-jest": "^26.3.0",
+    "chromedriver": "^84.0.1",
+    "jest": "^26.4.2",
+    "node-fetch": "^2.6.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.0"
+  }
 }

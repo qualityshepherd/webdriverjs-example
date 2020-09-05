@@ -1,4 +1,3 @@
-import 'regenerator-runtime/runtime' // for jest polyfill :\
 import homePage from '../pages/homePage'
 import githubPage from '../pages/githubPage'
 

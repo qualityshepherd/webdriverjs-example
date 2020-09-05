@@ -1,4 +1,3 @@
-import 'regenerator-runtime/runtime' // for jest polyfill :\
 import searchPage from '../pages/searchPage'
 
 describe('Search', () => {

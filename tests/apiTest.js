@@ -1,4 +1,3 @@
-import 'regenerator-runtime/runtime' // for jest polyfill :\
 import * as api from '../lib/apiModule';
 
 describe('API', () => {
