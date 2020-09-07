@@ -22,3 +22,5 @@ These example E2E tests:
 
 ## Links
 - [WebdriverJS API](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index.html)
+
+![Test Run Gif](https://qualityshepherd.com/screencasts/webdriverjs-example.gif)
