@@ -10,9 +10,26 @@ const homePage = {
   githubLink: By.css('#github-social img'),
   nextPageLink: By.css('.next'),
 
+  /**
+   * test if a post title exists
+   * @param  {string} postTitle
+   * @return {bool}
+   */
   async postTitleExists(postTitle) {
     const found = await this.driver.findElements(By.linkText(postTitle))
     return found.length > 0
+  },
+
+  /**
+   * click it!
+   * webdriverjs will _sometimes_ click WHILE it's scrolling to the
+   * element. In this case, at the bottom of the page. Sadness...
+   */
+  async clickGithubLink() {
+    // TODO: stop being lazy and do this right... :\
+    await homePage.hoverOver(this.githubLink)
+    await this.driver.sleep(420) // sadness
+    await this.click(this.githubLink)
   },
 
   /**

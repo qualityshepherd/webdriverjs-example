@@ -12,8 +12,7 @@ describe('QualityShepherd.com', () => {
   })
 
   test('should open social media link in new window', async () =>  {
-    await homePage.hoverOver(homePage.githubLink) // because wedriver bug
-    await homePage.click(homePage.githubLink)
+    await homePage.clickGithubLink()
     await homePage.switchToNewWindow()
 
     expect(await githubPage.elementPressent(githubPage.username)).toBeTruthy()
