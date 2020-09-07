@@ -13,7 +13,10 @@
     "verbose": true
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest --no-cache"
+    "test": "./node_modules/.bin/jest --no-cache",
+    "watch": "./node_modules/.bin/jest --watchAll",
+    "watch:api": "./node_modules/.bin/jest tests/apiTest.js --watch",
+    "api": "./node_modules/.bin/jest tests/apiTest.js"
   },
   "keywords": [
     "webdriverjs",
