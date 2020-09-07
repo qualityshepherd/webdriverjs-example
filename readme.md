@@ -13,11 +13,10 @@ These example E2E tests:
   - use ES6+ hotness
   - are a bit silly but you'll get the point...
 
-## Requirements
-- Nodejs 10+
-
 ## Installing & Running
+> assumes you have [Nodejs 10+](https://nodejs.org/en) and [Git](https://git-scm.com/downloads) installed
 - clone it! `git clone git@github.com:qualityshepherd/webdriverjs-example.git`
+- jump into the directory `cd webdriverjs-example`
 - install dependencies: `npm i`
 - run tests: `npm test`
 
