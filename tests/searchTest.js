@@ -15,7 +15,7 @@ describe('Search', () => {
   test('unfound search term should return no results', async () =>  {
     await searchPage.searchFor('sfdslkjsfkjslkdf')
 
-    expect(await searchPage.elementPressent(searchPage.noResultsMsg)).toBeTruthy()
+    expect(await searchPage.isPressent(searchPage.noResultsMsg)).toBeTruthy()
   })
 
   afterAll(async () => {

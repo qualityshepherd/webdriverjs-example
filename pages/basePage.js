@@ -27,7 +27,7 @@ const basePage = {
 
   /**
    * find a single element
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    * @return {obj} - a webdriver locator object
    */
   async find(elementBy) {
@@ -37,7 +37,7 @@ const basePage = {
 
   /**
    * find multiple elements
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    * @return {obj} - a webdriver locator object
    */
   async findAll(elementBy) {
@@ -47,18 +47,37 @@ const basePage = {
 
   /**
    * click an element
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    * @param  {int} index - optional index of element to click
    * @return {obj} - a self reference
    */
-  async click(elementBy, index = 0) {
-    const elements = await this.findAll(elementBy)
-    return elements[index].click()
+  async click(elementsBy, index = 0) {
+    const elements = await this.findAll(elementsBy)
+    await elements[index].click()
+  },
+
+  /**
+   * wait and click
+   *
+   * click can sometimes fire while scrolling to an element
+   *
+   * @param  {By} elementBy
+   * @param  {num} waitTime - time to wain in ms
+   * @return {obj} - a self reference
+   */
+  async waitAndClick(elementBy, waitTime) {
+    const element = await this.find(elementBy)
+    const actions = this.driver.actions({async: true})
+    return await actions
+      .move({origin:element})
+      .pause(waitTime)
+      .click(element)
+      .perform();
   },
 
   /**
    * get the number of elements
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    * @return {int}
    */
   async getCount(elementBy) {
@@ -68,10 +87,10 @@ const basePage = {
 
   /**
    * test if an element is present in the dom
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    * @return {bool}
    */
-  async elementPressent(elementBy) {
+  async isPressent(elementBy) {
     const found = await this.driver.findElements(elementBy)
     return found.length > 0
   },
@@ -105,7 +124,7 @@ const basePage = {
 
   /**
    * hover over an element
-   * @param  {obj} elementBy - an object created by Webdriver's By method
+   * @param  {By} elementBy - an object created by Webdriver's By method
    */
   async hoverOver(elementBy) {
     const element = await this.find(elementBy)

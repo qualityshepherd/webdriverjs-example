@@ -12,10 +12,12 @@ describe('QualityShepherd.com', () => {
   })
 
   test('should open social media link in new window', async () =>  {
-    await homePage.clickGithubLink()
+    // click can sometimes fire when scrolling to the element
+    // so we add a little time for it to scroll
+    await homePage.waitAndClick(homePage.githubLink, 420)
     await homePage.switchToNewWindow()
 
-    expect(await githubPage.elementPressent(githubPage.username)).toBeTruthy()
+    expect(await githubPage.isPressent(githubPage.username)).toBeTruthy()
 
     await githubPage.close()
     await homePage.switchToFirstWindow()
@@ -23,7 +25,6 @@ describe('QualityShepherd.com', () => {
 
   test('should find an older post by paging', async () =>  {
     const postTitle = 'Protractor: How To Page Object'
-    await homePage.hoverOver(homePage.nextPageLink) // because wedriver bug
     await homePage.findPostByPaging(postTitle)
 
     expect(await homePage.postTitleExists(postTitle)).toBeTruthy()

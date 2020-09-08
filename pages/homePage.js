@@ -21,18 +21,6 @@ const homePage = {
   },
 
   /**
-   * click it!
-   * webdriverjs will _sometimes_ click WHILE it's scrolling to the
-   * element. In this case, at the bottom of the page. Sadness...
-   */
-  async clickGithubLink() {
-    // TODO: stop being lazy and do this right... :\
-    await homePage.hoverOver(this.githubLink)
-    await this.driver.sleep(420) // sadness
-    await this.click(this.githubLink)
-  },
-
-  /**
    * find a post via pagination
    * @param  {string} postTitle
    */
