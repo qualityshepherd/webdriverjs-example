@@ -5,8 +5,8 @@ describe('API', () => {
     const response = await api.get('/facts/random')
     const json = await response.json()
 
-    expect(response.status).toBe(200)
-    expect(json.status.sentCount).toBe(1)
+    expect(await response.status).toBe(200)
+    expect(await json.status.sentCount).toBe(1)
   })
 
   test('should get cat by id', async () => {

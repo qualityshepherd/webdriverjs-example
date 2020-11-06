@@ -27,15 +27,14 @@ const homePage = {
    * @param  {string} postTitle
    */
   async findPostByLoadingMore(postTitle) {
-    await this.waitAndClick(this.loadMoreBtn);
-    await this.waitAndClick(this.loadMoreBtn);
+    await this.waitAndClick(this.loadMoreBtn)
     // did we find it? If not try, try again...
-    await this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle);
+    await this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle)
   },
 
   async searchFor(text) {
     const searchBox = await this.find(this.searchBox)
-    await searchBox.sendKeys(text, Key.ENTER);
+    await searchBox.sendKeys(text, Key.ENTER)
   }
 }
 export default homePage
