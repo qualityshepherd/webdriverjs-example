@@ -10,7 +10,7 @@ const searchPage = {
   noResultsMsg: By.css('#no-results'),
 
   async searchFor(text) {
-    let searchBox = await this.find(this.searchBox)
+    const searchBox = await this.find(this.searchBox)
     await searchBox.sendKeys(text, Key.ENTER);
   }
 }

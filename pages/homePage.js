@@ -8,7 +8,7 @@ const homePage = {
   url: '',
   posts: By.css('div.post'),
   githubLink: By.css('#github-social img'),
-  nextPageLink: By.css('.next'),
+  loadMoreBtn: By.css('#load-more'),
 
   /**
    * test if a post title exists
@@ -21,13 +21,14 @@ const homePage = {
   },
 
   /**
-   * find a post via pagination
+   * find a post via the "Load more..." button
    * @param  {string} postTitle
    */
-  async findPostByPaging(postTitle) {
-    await this.click(this.nextPageLink);
+  async findPostByLoadingMore(postTitle) {
+    await this.waitAndClick(this.loadMoreBtn);
+    await this.waitAndClick(this.loadMoreBtn);
     // did we find it? If not try, try again...
-    await this.postTitleExists(postTitle) ? true : await this.findPostByPaging(postTitle);
+    await this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle);
   }
 }
 export default homePage

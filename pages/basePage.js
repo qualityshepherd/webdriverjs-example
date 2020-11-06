@@ -1,4 +1,4 @@
-import {Builder, By, until} from 'selenium-webdriver'
+import {Builder, By, until, Key} from 'selenium-webdriver'
 
 // use Builder to create a new webdriver instance using chrome
 // and use implicit waits
@@ -65,14 +65,28 @@ const basePage = {
    * @param  {num} waitTime - time to wain in ms
    * @return {obj} - a self reference
    */
-  async waitAndClick(elementBy, waitTime) {
+  async waitAndClick(elementBy, waitTime = 420) {
     const element = await this.find(elementBy)
     const actions = this.driver.actions({async: true})
     return await actions
       .move({origin:element})
       .pause(waitTime)
       .click(element)
-      .perform();
+      .perform()
+  },
+
+  /**
+   * command click a link (opens in new tab)
+   * @param  {By} elementBy
+   * @return {obj} - a self reference
+   */
+  async commandClick(elementBy) {
+    const element = await this.find(elementBy)
+    const actions = driver.actions({async: true})
+    await actions
+      .keyDown(Key.COMMAND)
+      .click(element)
+      .perform()
   },
 
   /**
@@ -101,7 +115,7 @@ const basePage = {
    */
   async switchToNewWindow(index = 1) {
     // wait for the new window to open
-    await this.driver.wait(async () => ( await this.driver.getAllWindowHandles()).length === 2, 6000);
+    await this.driver.wait(async () => ( await this.driver.getAllWindowHandles()).length === 2, 6000)
     const windowHandles = await this.driver.getAllWindowHandles()
     await this.driver.switchTo().window(windowHandles[index])
   },
@@ -129,7 +143,7 @@ const basePage = {
   async hoverOver(elementBy) {
     const element = await this.find(elementBy)
     const actions = this.driver.actions({async: true})
-    await actions.move({origin:element}).perform();
+    await actions.move({origin:element}).perform()
   }
 }
 export default basePage
