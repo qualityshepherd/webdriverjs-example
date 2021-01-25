@@ -1,4 +1,4 @@
-import {By} from 'selenium-webdriver'
+import { By } from 'selenium-webdriver'
 import basePage from './basePage'
 
 const githubPage = {

@@ -2,7 +2,6 @@ import homePage from '../pages/homePage'
 import githubPage from '../pages/githubPage'
 
 describe('QualityShepherd.com', () => {
-
   beforeAll(async () => {
     await homePage.goto()
   })
@@ -11,7 +10,7 @@ describe('QualityShepherd.com', () => {
     expect(await homePage.getCount(homePage.posts)).toBe(7)
   })
 
-  test('should find an older post by loading more posts', async () =>  {
+  test('should find an older post by loading more posts', async () => {
     const postTitle = 'Protractor - How To Page Object'
     await homePage.findPostByLoadingMore(postTitle)
 
@@ -19,7 +18,7 @@ describe('QualityShepherd.com', () => {
   })
 
   // FUTURE: this is failing on ci but not locally... :\
-  test('should open social media link in new window', async () =>  {
+  test('should open social media link in new window', async () => {
     await homePage.commandClick(homePage.githubLink)
     await homePage.switchToNewWindow()
 
@@ -33,4 +32,3 @@ describe('QualityShepherd.com', () => {
     await homePage.quit()
   })
 })
-

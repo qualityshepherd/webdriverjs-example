@@ -1,5 +1,5 @@
 import basePage from './basePage'
-import {By} from 'selenium-webdriver'
+import { By } from 'selenium-webdriver'
 
 const searchPage = {
   ...basePage,

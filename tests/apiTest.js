@@ -1,14 +1,6 @@
 import api from '../lib/apiModule'
 
 describe('API', () => {
-  test('should return a random fact', async () => {
-    const response = await api.get('/facts/random')
-    const json = await response.json()
-
-    expect(await response.status).toBe(200)
-    expect(await json.status.sentCount).toBe(1)
-  })
-
   test('should get cat by id', async () => {
     const id = '5de780600013130015a3ccaf'
     const response = await api.get(`/facts/${id}`)
@@ -19,7 +11,7 @@ describe('API', () => {
   })
 
   test('should get facts by type', async () => {
-    const response = await api.get(`/facts/random?animal_type=cat`)
+    const response = await api.get('/facts/random?animal_type=cat')
     const json = await response.json()
 
     expect(response.status).toBe(200)
@@ -27,7 +19,7 @@ describe('API', () => {
   })
 
   test('should get facts by amount', async () => {
-    const response = await api.get(`/facts/random?amount=2`)
+    const response = await api.get('/facts/random?amount=2')
     const json = await response.json()
 
     expect(response.status).toBe(200)

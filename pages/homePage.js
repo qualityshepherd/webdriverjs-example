@@ -1,4 +1,4 @@
-import {By, Key} from 'selenium-webdriver'
+import { By, Key } from 'selenium-webdriver'
 import basePage from './basePage'
 
 // could use a class/inheritance here but I opted not to...
@@ -17,7 +17,7 @@ const homePage = {
    * @param  {string} postTitle
    * @return {bool}
    */
-  async postTitleExists(postTitle) {
+  async postTitleExists (postTitle) {
     const found = await this.driver.findElements(By.linkText(postTitle))
     return found.length > 0
   },
@@ -26,13 +26,13 @@ const homePage = {
    * find a post via the "Load more..." button
    * @param  {string} postTitle
    */
-  async findPostByLoadingMore(postTitle) {
+  async findPostByLoadingMore (postTitle) {
     await this.waitAndClick(this.loadMoreBtn)
     // did we find it? If not try, try again...
-    await this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle)
+    this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle)
   },
 
-  async searchFor(text) {
+  async searchFor (text) {
     const searchBox = await this.find(this.searchBox)
     await searchBox.sendKeys(text, Key.ENTER)
   }
