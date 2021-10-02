@@ -17,7 +17,6 @@ describe('QualityShepherd.com', () => {
     expect(await homePage.postTitleExists(postTitle)).toBeTruthy()
   })
 
-  // FUTURE: this is failing on ci but not locally... :\
   test('should open social media link in new window', async () => {
     await homePage.commandClick(homePage.githubLink)
     await homePage.switchToNewWindow()

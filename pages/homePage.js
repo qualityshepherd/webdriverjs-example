@@ -3,12 +3,10 @@ import basePage from './basePage'
 
 // could use a class/inheritance here but I opted not to...
 const homePage = {
-  ...basePage, // merge in basePage
-
   url: '',
   posts: By.css('div.post'),
   githubLink: By.css('#github-social img'),
-  loadMoreBtn: By.css('#load-more'),
+  loadMoreBtn: By.css('button#load-more'),
   // searchy
   searchBox: By.css('#search'),
 
@@ -37,4 +35,4 @@ const homePage = {
     await searchBox.sendKeys(text, Key.ENTER)
   }
 }
-export default homePage
+export default { ...basePage, ...homePage }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Example tests using webdriverjs",
   "engines": {
-    "node": "12.18.3"
+    "node": ">=14"
   },
   "standard": {
     "globals": [
@@ -12,13 +12,9 @@
       "afterAll",
       "describe",
       "test",
-      "beforeEach"
+      "beforeEach",
+      "afterEach"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "./node_modules/.bin/standard --fix"
-    }
   },
   "jest": {
     "testMatch": [
@@ -28,29 +24,28 @@
     "verbose": true
   },
   "scripts": {
-    "jest": "./node_modules/.bin/jest",
-    "test": "npm run jest --no-cache",
+    "prejest": "jest --clearCache",
+    "jest": "jest",
+    "test": "npm run jest",
     "watch": "npm run jest --watchAll",
     "watch:api": "npm run jest tests/apiTest.js --watch",
-    "api": "npm run jest tests/apiTest.js"
+    "api": "npm run jest tests/apiTest.js",
+    "pretty": "standard --fix"
   },
   "author": "brine",
   "license": "MIT",
   "dependencies": {
-    "babel-jest": "^26.3.0",
-    "chromedriver": "^88.0.0",
-    "husky": "^4.3.8",
-    "jest": "^26.4.2",
-    "node-fetch": "^2.6.0",
-    "save-dev": "0.0.1-security",
-    "selenium-webdriver": "^4.0.0-alpha.8",
+    "babel-jest": "^26.6.3",
+    "chromedriver": "^94.0.0",
+    "jest": "^27.2.4",
+    "selenium-webdriver": "^4.0.0-rc-2",
     "standard": "^16.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/node": "^7.10.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.0"
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6"
   }
 }

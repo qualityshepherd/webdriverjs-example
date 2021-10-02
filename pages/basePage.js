@@ -48,7 +48,6 @@ const basePage = {
    * click an element
    * @param  {By} elementBy - an object created by Webdriver's By method
    * @param  {int} index - optional index of element to click
-   * @return {obj} - a self reference
    */
   async click (elementsBy, index = 0) {
     const elements = await this.findAll(elementsBy)
@@ -62,12 +61,11 @@ const basePage = {
    *
    * @param  {By} elementBy
    * @param  {num} waitTime - time to wain in ms
-   * @return {obj} - a self reference
    */
   async waitAndClick (elementBy, waitTime = 420) {
     const element = await this.find(elementBy)
     const actions = this.driver.actions({ async: true })
-    return await actions
+    await actions
       .move({ origin: element })
       .pause(waitTime)
       .click(element)
@@ -77,7 +75,6 @@ const basePage = {
   /**
    * command click a link (opens in new tab)
    * @param  {By} elementBy
-   * @return {obj} - a self reference
    */
   async commandClick (elementBy) {
     const element = await this.find(elementBy)
@@ -129,7 +126,6 @@ const basePage = {
 
   /**
    * close the current browser window
-   * @return {[type]} [description]
    */
   async close () {
     await this.driver.close()
