@@ -1,12 +1,7 @@
-import { Builder, Key } from 'selenium-webdriver'
-
-// use Builder to create a new webdriver instance using chrome
-// and use implicit waits
-const driver = new Builder().forBrowser('chrome').build()
-driver.manage().setTimeouts({ implicit: 6000, pageLoad: 20000 })
+import { Builder, until, Key } from 'selenium-webdriver'
 
 const basePage = {
-  driver,
+  driver: new Builder().forBrowser('chrome').build(),
   baseUrl: 'https://qualityshepherd.com/',
 
   /**
@@ -30,7 +25,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async find (elementBy) {
-    const element = await this.driver.findElement(elementBy)
+    const element = await this.driver.wait(until.elementLocated(elementBy), 6000)
     return element
   },
 
@@ -40,7 +35,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async findAll (elementBy) {
-    const elements = await this.driver.findElements(elementBy)
+    const elements = await this.driver.wait(until.elementsLocated(elementBy), 6000)
     return elements
   },
 
@@ -77,7 +72,7 @@ const basePage = {
    */
   async commandClick (elementBy) {
     const element = await this.find(elementBy)
-    const actions = driver.actions({ async: true })
+    const actions = this.driver.actions({ async: true })
     await actions
       .keyDown(Key.COMMAND)
       .click(element)
