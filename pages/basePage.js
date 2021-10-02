@@ -3,7 +3,7 @@ import { Builder, until, Key } from 'selenium-webdriver'
 // use Builder to create a new webdriver instance using chrome
 // and use implicit waits
 const driver = new Builder().forBrowser('chrome').build()
-driver.manage().setTimeouts({ implicit: 10000, pageLoad: 20000 })
+driver.manage().setTimeouts({ implicit: 6000, pageLoad: 20000 })
 
 const basePage = {
   driver,
