@@ -3,7 +3,7 @@ import { Builder, until, Key } from 'selenium-webdriver'
 // use Builder to create a new webdriver instance using chrome
 // and use implicit waits
 const driver = new Builder().forBrowser('chrome').build()
-driver.manage().setTimeouts({ implicit: 20000, pageLoad: 20000 })
+driver.manage().setTimeouts({ implicit: 6000, pageLoad: 20000 })
 
 const basePage = {
   driver,
@@ -62,12 +62,11 @@ const basePage = {
    * @param  {By} elementBy
    * @param  {num} waitTime - time to wain in ms
    */
-  async waitAndClick (elementBy, waitTime = 420) {
+  async waitAndClick (elementBy) {
     const element = await this.find(elementBy)
     const actions = this.driver.actions({ async: true })
     await actions
       .move({ origin: element })
-      .pause(waitTime)
       .click(element)
       .perform()
   },
