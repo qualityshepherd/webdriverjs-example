@@ -7,21 +7,21 @@ describe('QualityShepherd.com', () => {
   })
 
   test('should display 7 posts per page', async () => {
-    expect(await homePage.getCount(homePage.posts)).toBe(7)
+    await expect(await homePage.getCount(homePage.posts)).toBe(7)
   })
 
   test('should find an older post by loading more posts', async () => {
     const postTitle = 'Protractor - How To Page Object'
     await homePage.findPostByLoadingMore(postTitle)
 
-    expect(await homePage.postTitleExists(postTitle)).toBeTruthy()
+    await expect(await homePage.postTitleExists(postTitle)).toBeTruthy()
   })
 
   test('should open social media link in new window', async () => {
     await homePage.commandClick(homePage.githubLink)
     await homePage.switchToNewWindow()
 
-    expect(await githubPage.isPressent(githubPage.username)).toBeTruthy()
+    await expect(await githubPage.isPressent(githubPage.username)).toBeTruthy()
 
     await githubPage.close()
     await homePage.switchToFirstWindow()

@@ -25,7 +25,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async find (elementBy) {
-    const element = await this.driver.wait(until.elementLocated(elementBy), 6000)
+    const element = await this.driver.wait(until.elementLocated(elementBy), 7000)
     return element
   },
 
@@ -35,7 +35,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async findAll (elementBy) {
-    const elements = await this.driver.wait(until.elementsLocated(elementBy), 6000)
+    const elements = await this.driver.wait(until.elementsLocated(elementBy), 7000)
     return elements
   },
 
@@ -59,7 +59,7 @@ const basePage = {
    */
   async waitAndClick (elementBy) {
     const element = await this.find(elementBy)
-    const actions = this.driver.actions({ async: true })
+    const actions = await this.driver.actions({ async: true })
     await actions
       .move({ origin: element })
       .click(element)
@@ -72,7 +72,7 @@ const basePage = {
    */
   async commandClick (elementBy) {
     const element = await this.find(elementBy)
-    const actions = this.driver.actions({ async: true })
+    const actions = await this.driver.actions({ async: true })
     await actions
       .keyDown(Key.COMMAND)
       .click(element)
