@@ -1,4 +1,4 @@
-import { Builder, until, Key } from 'selenium-webdriver'
+import { Builder, Key } from 'selenium-webdriver'
 
 // use Builder to create a new webdriver instance using chrome
 // and use implicit waits
@@ -30,7 +30,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async find (elementBy) {
-    const element = await this.driver.wait(until.elementLocated(elementBy))
+    const element = await this.driver.findElement(elementBy)
     return element
   },
 
@@ -40,7 +40,7 @@ const basePage = {
    * @return {obj} - a webdriver locator object
    */
   async findAll (elementBy) {
-    const elements = await this.driver.wait(until.elementsLocated(elementBy))
+    const elements = await this.driver.findElements(elementBy)
     return elements
   },
 
