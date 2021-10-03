@@ -67,14 +67,14 @@ const basePage = {
   },
 
   /**
-   * command click a link (opens in new tab)
+   * command (mac) or ctrl click a link (opens in new tab)
    * @param  {By} elementBy
    */
-  async commandClick (elementBy) {
+  async cmdCtrlClick (elementBy) {
     const element = await this.find(elementBy)
     const actions = await this.driver.actions({ async: true })
     await actions
-      .keyDown(Key.COMMAND)
+      .keyDown(Key.META)
       .click(element)
       .perform()
   },
