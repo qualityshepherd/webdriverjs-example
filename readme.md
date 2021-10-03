@@ -1,4 +1,4 @@
-[![Codeship Status for qualityshepherd/webdriverjs-example](https://app.codeship.com/projects/3642cc20-4621-0135-6835-62afb45a34d4/status?branch=master)](https://app.codeship.com/projects/231337)
+[![Codeship Status for qualityshepherd/webdriverjs-example](https://app.codeship.com/projects/3642cc20-4621-0135-6835-62afb45a34d4/status?branch=main)](https://app.codeship.com/projects/231337)
 
 # WebdriverJS Example
 
