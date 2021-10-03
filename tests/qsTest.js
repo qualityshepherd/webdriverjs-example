@@ -18,7 +18,7 @@ describe('QualityShepherd.com', () => {
   })
 
   test('should open social media link in new window', async () => {
-    await homePage.commandClick(homePage.githubLink)
+    await homePage.cmdCtrlClick(homePage.githubLink)
     await homePage.switchToNewWindow()
 
     await expect(await githubPage.isPressent(githubPage.username)).toBeTruthy()
