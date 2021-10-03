@@ -2,7 +2,7 @@
 
 # WebdriverJS Example
 
-[WebdriverJS]() (confusingly aka `Selenium Webdriver` :\ ) is an adorable little e2e testing framework... with all the quirks we've come to expect from it.
+[WebdriverJS](https://www.selenium.dev/documentation) (confusingly aka `Selenium-Webdriver` :\ ) is an adorable little e2e testing framework... with all the quirks we've come to expect from it.
 
 These example E2E tests:
   - use [WebdriverJS](https://www.npmjs.com/package/selenium-webdriver)
