@@ -74,9 +74,18 @@ const basePage = {
     const element = await this.find(elementBy)
     const actions = await this.driver.actions({ async: true })
     await actions
-      .keyDown(Key.META)
+      .keyDown(this.ctrlOrCommandKey())
       .click(element)
       .perform()
+  },
+
+  /**
+   * detect os and return COMMAND key for Mac or CONTROL for everyone else...
+   * @return {obj} - either COMMAND or CONTROL key
+   */
+  ctrlOrCommandKey () {
+    const os = (process.platform === 'darwin') ? Key.COMMAND : Key.CONTROL
+    return os
   },
 
   /**
