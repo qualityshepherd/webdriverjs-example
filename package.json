@@ -29,7 +29,6 @@
     "test": "npm run jest",
     "watch": "npm run jest --watchAll",
     "watch:api": "npm run jest tests/apiTest.js --watch",
-    "api": "npm run jest tests/apiTest.js",
     "pretty": "standard --fix"
   },
   "author": "brine",
