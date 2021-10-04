@@ -4,13 +4,14 @@
 
 [WebdriverJS](https://www.selenium.dev/documentation) (confusingly aka `Selenium-Webdriver` :\ ) is an adorable little e2e testing framework... with all the quirks we've come to expect from it.
 
+At the end of the day... I _might_ choose webdriverjs over [Protractor](https://github.com/qualityshepherd/protractor-example) or [WebdriverIO](https://github.com/qualityshepherd/wdio-example) because of the _crazy_ amount of changes both of those frameworks go through (and we must endure).
+
 These example E2E tests:
   - use [WebdriverJS](https://www.npmjs.com/package/selenium-webdriver)
   - run via [Jest](https://jestjs.io/)
   - use page objects
   - run in parallel
-  - run API tests
-  - use ES6+ hotness
+  - use ES6y
   - are a bit silly but you'll get the point...
 
 ## Installing & Running
