@@ -4,9 +4,9 @@ import basePage from './basePage'
 // could use a class/inheritance here but I opted not to...
 const homePage = {
   url: '',
-  posts: By.css('div.post'),
+  posts: By.css('.post'),
   githubLink: By.css('#github-social img'),
-  loadMoreBtn: By.css('button#load-more'),
+  loadMoreBtn: By.css('#load-more'),
   // searchy
   searchBox: By.css('#search'),
 

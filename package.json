@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Example tests using webdriverjs",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "standard": {
     "globals": [
@@ -35,13 +35,13 @@
   "license": "MIT",
   "dependencies": {
     "babel-jest": "^26.6.3",
-    "chromedriver": "^94.0.0",
-    "jest": "^27.2.4",
-    "selenium-webdriver": "^4.0.0-rc-2",
-    "standard": "^16.0.3"
+    "chromedriver": "^96.0.0",
+    "jest": "^27.4.5",
+    "selenium-webdriver": "^4.1.0",
+    "standard": "^16.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.16.5",
     "@babel/node": "^7.15.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
     "@babel/plugin-transform-runtime": "^7.15.0",
