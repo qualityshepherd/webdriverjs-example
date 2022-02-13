@@ -29,16 +29,15 @@
     "test": "npm run jest",
     "watch": "npm run jest --watchAll",
     "watch:api": "npm run jest tests/apiTest.js --watch",
-    "pretty": "standard --fix"
+    "pretty": "npx standard --fix"
   },
   "author": "brine",
   "license": "MIT",
   "dependencies": {
-    "babel-jest": "^26.6.3",
-    "chromedriver": "^96.0.0",
-    "jest": "^27.4.5",
-    "selenium-webdriver": "^4.1.0",
-    "standard": "^16.0.4"
+    "babel-jest": "^27.4.6",
+    "chromedriver": "^97.0.0",
+    "jest": "^27.4.7",
+    "selenium-webdriver": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

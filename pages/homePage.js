@@ -7,7 +7,6 @@ const homePage = {
   posts: By.css('.post'),
   githubLink: By.css('#github-social img'),
   loadMoreBtn: By.css('#load-more'),
-  // searchy
   searchBox: By.css('#search'),
 
   /**
