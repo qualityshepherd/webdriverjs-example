@@ -1,7 +1,6 @@
 import { By, Key } from 'selenium-webdriver'
 import basePage from './basePage'
 
-// could use a class/inheritance here but I opted not to...
 const homePage = {
   url: '',
   posts: By.css('.post'),
@@ -26,7 +25,7 @@ const homePage = {
   async findPostByLoadingMore (postTitle) {
     await this.waitAndClick(this.loadMoreBtn)
     // did we find it? If not try, try again...
-    this.postTitleExists(postTitle) ? true : await this.findPostByLoadingMore(postTitle)
+    await this.postTitleExists(postTitle) ? false : await this.findPostByLoadingMore(postTitle)
   },
 
   async searchFor (text) {
