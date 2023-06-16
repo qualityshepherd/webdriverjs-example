@@ -1,3 +1,4 @@
+[![E2E Tests](https://github.com/qualityshepherd/webdriverjs-example/actions/workflows/e2e.yaml/badge.svg)](https://github.com/qualityshepherd/webdriverjs-example/actions/workflows/e2e.yaml)
 
 # WebdriverJS Example
 
